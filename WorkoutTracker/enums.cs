@@ -1,6 +1,6 @@
 enum MuscleGroup 
 {
-    Chest.
+    Chest,
     Back,
     Legs,
     Shoulders,
