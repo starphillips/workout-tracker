@@ -1,6 +1,4 @@
-﻿// Console.WriteLine("Hello, World!");
-
-Exercise hipThrusts = new Exercise{Name = "Hip Thrusts", MuscleGroup = MuscleGroup.Glutes, ExerciseType = ExerciseType.Compound};
+﻿Exercise hipThrusts = new Exercise{Name = "Hip Thrusts", MuscleGroup = MuscleGroup.Glutes, ExerciseType = ExerciseType.Compound};
 Exercise singleLegRDL = new Exercise { Name = "Single Leg RDL", MuscleGroup = MuscleGroup.Glutes, ExerciseType = ExerciseType.Compound};
 Exercise bulgarianSplitSquats = new Exercise {Name = "Bulgarian Split Squats", MuscleGroup = MuscleGroup.Glutes, ExerciseType = ExerciseType.Compound};
 Exercise cableKickbacks = new Exercise {Name = "Cable Kickbacks", MuscleGroup = MuscleGroup.Glutes, ExerciseType = ExerciseType.Isolation};
@@ -18,6 +16,12 @@ WorkoutSession session = new WorkoutSession {
 };
 
 
+// Hardcoded Test
+
+// Establish a new workout session which includes an exercise log for each completed exercise
+
+// Foreach loop adds in the records we've hardcoded in for our session
+
 Console.WriteLine($"{session.Date} - {session.MuscleGroup} ({session.WorkoutType})");
 
 foreach (ExerciseLog log in session.ExerciseLogs)
@@ -26,26 +30,40 @@ foreach (ExerciseLog log in session.ExerciseLogs)
 
     foreach (Set set in log.Sets)
     {
-        Console.WriteLine($"   {set.Reps} reps @ {set.Weight}kg");
+        Console.WriteLine($"{set.Reps} reps @ {set.Weight}kg");
     }
 }
 
 
-// Hardcoded Test
+// called once here
 
-// Establish a new workout session which includes each exercise log for each completed workout
+List<Exercise> shoulderExercises = ExerciseLibrary.GetActiveByMuscleGroup(MuscleGroup.Shoulders);
 
-// Foreach loop adds in the records we've hardcoded in for our session
+foreach (Exercise exercise in shoulderExercises)
+{
+    Console.WriteLine(exercise.Name);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /*
-User Input Implementation:
+--- User Input Implementation: ---
 
 The method above is good when the inputted data is known.
-The use of .Add() is better when the data isn't know in advance i.e. when the user is inputting their workout data.
+.Add() is better when the data isn't know in advance i.e. when the user is inputting their workout data.
 
-Example of what our logic will be doing under the hood when it comes to user input:
+--- Example of what our logic will be doing under the hood when it comes to user input: ---
 
 var session = new WorkoutSession();
 session.MuscleGroup = MuscleGroup.Back;
