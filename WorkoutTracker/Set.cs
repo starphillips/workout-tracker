@@ -1,5 +1,5 @@
 class Set
 {
    public int Reps;
-   public float Weight;
+   public double Weight;
 }
