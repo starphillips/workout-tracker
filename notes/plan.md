@@ -9,8 +9,6 @@ Set             Reps, Weight
 ExerciseLog     Exercise, List of Sets
 WorkoutSession  Date, MuscleGroup, WorkoutType, List of ExerciseLogs
 
-
-
 ### Weeks
 ISOWeek.GetWeekOfYear(date), or count weeks since first logged workout: "Week 1, Week 2…
 Database writing or csv writing
@@ -19,7 +17,6 @@ We will tell the system when we are in a different week
 
 ### Type of workout
 either hypertrophy or strength 
-
 
 ### Muscle Group > Exercises
 For each muscle group we will have a set number of exercises we do and we will have named it hypertrophy (high reps, lower weigh) or strength set (lower reps, higher weight)
@@ -49,4 +46,3 @@ The system will keep separate records for separate muscle groups but also the sa
 Then as a user we can also change our exercises for each muscle group at a later date. 
 
 For example, it will save the exercises we do and their records, with ability to set as IsActive. We can mark old ones as false and then they are there if we ever want to return back to them. We will ask for the exercises that are active only when recording a workout.
-

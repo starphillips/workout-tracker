@@ -1,4 +1,3 @@
-// using System.Linq;
 static class ExerciseLibrary
 {
     public static List<Exercise> All = new List<Exercise>
@@ -32,6 +31,21 @@ static class ExerciseLibrary
     {
         return All.Where(exercise => exercise.MuscleGroup == muscleGroup && exercise.IsActive).ToList();
     }
+    
+
+/*  Replaces: 
+    foreach (Exercise exercise in ExerciseLibrary.All)
+    {
+        if (exercise.MuscleGroup == selectedGroup && exercise.IsActive) 
+        {
+            Console.WriteLine(exercise.Name);  
+        }
+    }
+
+    where we would have to use this loop every time we want to call an IsActive exercise, we replace with a method to call when needed
+*/
+
+// static void ParseSets(string input)
 
 }
 
