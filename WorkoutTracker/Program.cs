@@ -39,42 +39,67 @@
 
 
 // User Input
+// Console.WriteLine("What type of session today? \n");
 
-Console.WriteLine("What muscle group did you train today? \n");
+// foreach (var name in Enum.GetNames<WorkoutType>())
+// {
+//     Console.WriteLine($"- {name}");
+// }
 
-Console.WriteLine("Please select ONE from the list below: \n");
+// WorkoutType selectedType;
 
-foreach (var name in Enum.GetNames<MuscleGroup>())
-{
-    Console.WriteLine($"- {name}");
-}
+// while(true)
+// {
+//     string? usersWorkoutType = Console.ReadLine();
 
-MuscleGroup selectedGroup;
+//     if (Enum.TryParse(usersWorkoutType, true, out selectedType))
+//     {
+//         break;
+//     }
+//     else
+//     {
+//         Console.WriteLine("Sorry please choose from the selected list. Type help for an explanation of each.");
+//     }
+// }
+// Console.WriteLine("What muscle group did you train today? \n");
 
-while (true)
-{
-    string? usersMuscleGroup = Console.ReadLine();
+// Console.WriteLine("Please select ONE from the list below: \n");
 
-    if (Enum.TryParse(usersMuscleGroup, true, out selectedGroup))
-    {
-        break;
-    }
-    else
-    {
-        Console.WriteLine("Sorry this muscle group does not currently exist in our tracker application or you have selected too many.");
-    }
+// foreach (var name in Enum.GetNames<MuscleGroup>())
+// {
+//     Console.WriteLine($"- {name}");
+// }
 
-}
+// MuscleGroup selectedGroup;
 
-List<Exercise> activeExercises = ExerciseLibrary.GetActiveByMuscleGroup(selectedGroup);
+// while (true)
+// {
+//     string? usersMuscleGroup = Console.ReadLine();
 
-foreach (Exercise exercise in activeExercises)
-{
-    Console.WriteLine(exercise.Name);
+//     if (Enum.TryParse(usersMuscleGroup, true, out selectedGroup))
+//     {
+//         break;
+//     }
+//     else
+//     {
+//         Console.WriteLine("Sorry this muscle group does not currently exist in our tracker application or you have selected too many.");
+//     }
+
+// }
+
+// List<Exercise> activeExercises = ExerciseLibrary.GetActiveByMuscleGroup(selectedGroup);
+
+// foreach (Exercise exercise in activeExercises)
+// {
+//     Console.WriteLine(exercise.Name);
     
-}
+// }
 
 
+
+
+
+    Set.ParseSets("6x10, 7x10, 8x10");
 
 
 

@@ -45,7 +45,5 @@ static class ExerciseLibrary
     where we would have to use this loop every time we want to call an IsActive exercise, we replace with a method to call when needed
 */
 
-// static void ParseSets(string input)
-
 }
 
