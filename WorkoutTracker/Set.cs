@@ -3,21 +3,44 @@ class Set
    public int Reps;
    public double Weight;
 
-   public static List<Set> ParseSets(string input)
+   public static bool TryParseSets(string input, out List<Set> sets, out string error)
    {
-      List<Set> sets = new List<Set>();
-      var setArray = input.Split(",");
+      sets = new List<Set>();
+      error = "";
+      var setString = input.ToLower().Split(",");
 
-      foreach (string i in setArray) 
+      foreach (string i in setString)
       {
-         string[] test = i.Trim().Split("x");
+         string[] splitSet = i.Trim().Split("x");
 
-          int rep = int.Parse(test[0]);
-          double weight = float.Parse(test[1]);
-         // Console.WriteLine($"reps: {test[0]}, weight: {test[1]}");
+         if (splitSet.Length != 2)
+         {
+            error = "please enter your sets, e.g. 12x40, 10x45";
+            return false;
+         }
+
+         if(!int.TryParse(splitSet[0], out int rep))
+         {
+            error = $"'{splitSet[0]}' should be a number";
+            return false;
+         }
+
+         if(!double.TryParse(splitSet[1], out double weight))
+         {
+            error = $"'{splitSet[1]}' should be a number, it can be decimal";
+            return false;
+         }
+
+         if (rep <= 0 || weight < 0)
+         {
+            error = "reps must be above 0 and weight can't be negative";
+            return false;
+         }
 
          sets.Add(new Set {Reps = rep, Weight = weight});
       }
-      return sets;
+      return true;
    }
 }
+
+ 

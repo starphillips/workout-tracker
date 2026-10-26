@@ -25,25 +25,15 @@ static class ExerciseLibrary
         new Exercise {Name = "Dumbbell Shoulder Press", MuscleGroup = MuscleGroup.Shoulders, ExerciseType = ExerciseType.Compound},
         new Exercise {Name = "Dumbbell Lateral Raises", MuscleGroup = MuscleGroup.Shoulders, ExerciseType = ExerciseType.Isolation, IsActive = false},
 
+        new Exercise {Name = "Captain's Chair Leg Raises", MuscleGroup = MuscleGroup.Abs, ExerciseType = ExerciseType.Isolation},
+        new Exercise {Name = "Cable Crunches", MuscleGroup = MuscleGroup.Abs, ExerciseType = ExerciseType.Isolation},
+        new Exercise {Name = "Decline Sit Ups", MuscleGroup = MuscleGroup.Abs, ExerciseType = ExerciseType.Isolation, IsActive = false}
+
     };
 
     public static List<Exercise> GetActiveByMuscleGroup(MuscleGroup muscleGroup)
     {
         return All.Where(exercise => exercise.MuscleGroup == muscleGroup && exercise.IsActive).ToList();
     }
-    
-
-/*  Replaces: 
-    foreach (Exercise exercise in ExerciseLibrary.All)
-    {
-        if (exercise.MuscleGroup == selectedGroup && exercise.IsActive) 
-        {
-            Console.WriteLine(exercise.Name);  
-        }
-    }
-
-    where we would have to use this loop every time we want to call an IsActive exercise, we replace with a method to call when needed
-*/
-
 }
 

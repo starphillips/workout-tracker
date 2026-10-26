@@ -1,6 +1,6 @@
 class Exercise
 {
-    public string Name;
+    public string Name = string.Empty;
     public MuscleGroup MuscleGroup;
     public ExerciseType ExerciseType;
 
