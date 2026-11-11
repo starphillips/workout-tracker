@@ -11,15 +11,23 @@ WorkoutType selectedType;
 
 while(true)
 {
-    string? usersWorkoutType = Console.ReadLine();
+    string? usersWorkoutType = (Console.ReadLine() ?? "").ToLower();
 
     if (Enum.TryParse(usersWorkoutType, true, out selectedType))
     {
         break;
     }
+    if (string.Equals(usersWorkoutType, "help"))
+    {
+        Console.WriteLine("Strength = Higher weight, low reps");
+        Console.WriteLine("Hypertrophy = Lower weight, high reps");
+        Console.WriteLine();
+        continue;
+    }
     else
     {
-        Console.WriteLine("Sorry please choose from the selected list. Type help for an explanation of each.");
+        Console.WriteLine("Please choose from either 'Strength' OR 'Hypertrophy'.");
+        Console.WriteLine("Type 'help' for an explanation of each.");
         Console.WriteLine();
     }
 }
